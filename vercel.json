@@ -1,0 +1,16 @@
+{
+    "redirects": [
+        {
+            "source": "/imgs/:path*",
+            "destination": "/img/:path*"
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/:path*",
+            "destination": "/404.html"
+        }
+    ],
+    "buildCommand": "npm run build",
+    "outputDirectory": "build"
+}
