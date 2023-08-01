@@ -1,0 +1,23 @@
+name: Check Broken Links
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build pages
+        run: |
+          npm i
+          npm run build
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          jobSummary: true
+          args: "build/**.html"

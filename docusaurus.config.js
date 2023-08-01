@@ -37,7 +37,12 @@ const config = {
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
           editCurrentVersion: true,
-          lastVersion: 'current'
+          editUrl: 'https://github.com/iPanelDev/docs/edit/main',
+          versions: {
+            current: {
+              label: '2.1.x'
+            }
+          }
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -50,7 +55,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       announcementBar: {
-        content: '别忘了<a href="https://github.com/iPanelDev/Host" style="color: var(--ifm-link-color); text-decoration: var(--ifm-link-decoration);">给个Star⭐</a> :D',
+        content: '别忘了<a href="https://github.com/iPanelDev/iPanel-Host" style="color: var(--ifm-link-color); text-decoration: var(--ifm-link-decoration);">给个Star⭐</a> :D',
         textColor: 'var(--ifm-color-primary-contrast-foreground)',
         backgroundColor: 'var(--ifm-background-surface-color)',
       },
@@ -74,6 +79,12 @@ const config = {
             label: '开发',
           },
           {
+            type: 'docSidebar',
+            sidebarId: 'more',
+            position: 'left',
+            label: '更多',
+          },
+          {
             type: 'docsVersionDropdown',
             position: 'right',
             dropdownActiveClassDisabled: true,
@@ -87,7 +98,7 @@ const config = {
             title: 'GitHub',
             items: [
               {
-                label: '自述',
+                label: '主页',
                 to: 'https://github.com/iPanelDev'
               },
               {
@@ -96,12 +107,12 @@ const config = {
               },
               {
                 label: 'Host',
-                to: 'https://github.com/iPanelDev/Host'
+                to: 'https://github.com/iPanelDev/iPanel-Host'
               },
             ],
           }
         ],
-        copyright: `Copyright © 2022 iPanelDev. Built with Docusaurus.`,
+        copyright: `Copyright © 2023 iPanelDev. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

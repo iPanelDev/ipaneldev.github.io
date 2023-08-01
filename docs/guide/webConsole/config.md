@@ -1,11 +1,11 @@
 # 配置文件
 
 :::caution
-**不要在此文件中填写密码**  
+**不要在此文件中填写敏感信息**  
 此文件并未加密传输，对所有网页控制台的用户均可见
 :::
 
-```js
+```js title='dist/config.js'
 // @ts-check
 // @ts-ignore
 // iPanel配置项
