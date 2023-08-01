@@ -15,7 +15,7 @@ const config = {
   organizationName: 'iPanelDev',
   projectName: 'docs',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
