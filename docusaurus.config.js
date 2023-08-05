@@ -40,7 +40,7 @@ const config = {
           editUrl: 'https://github.com/iPanelDev/docs/edit/main',
           versions: {
             current: {
-              label: '2.2.x'
+              label: '2.2.x🚧'
             }
           }
         },
@@ -55,7 +55,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       announcementBar: {
-        content: '别忘了<a href="https://github.com/iPanelDev/iPanel-Host" style="color: var(--ifm-link-color); text-decoration: var(--ifm-link-decoration);">给个Star⭐</a> :D',
+        content: '别忘了<a href="https://github.com/iPanelDev/iPanel-Host" style="color: var(--ifm-link-color); text-decoration: var(--ifm-link-decoration);">给个Star⭐喵</a> :D',
         textColor: 'var(--ifm-color-primary-contrast-foreground)',
         backgroundColor: 'var(--ifm-background-surface-color)',
       },

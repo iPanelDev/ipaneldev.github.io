@@ -2,33 +2,51 @@
 
 ```json
 {
+  "webSocket": {
+    "addr": "ws://0.0.0.0:30000",
+    "password": ""
+  },
   "webServer": {
     "urlPrefixes": [
-      "http://127.0.0.1:30000"
+      "http://127.0.0.1:30001"
     ],
     "directory": "dist",
     "disableFilesHotUpdate": true,
     "page404": "index.html"
   },
-  "win32Console": {
-    "allowWindowClosing": false,
-    "allowQuickEditAndInsert": false
+  "output": {
+    "displayCallerMemberName": false
   },
-  "debug": false,
-  "instancePassword": "123456",
-  "_internalVersion": 1
+  "debug": false
 }
 ```
 
-:::caution
-设置内容可能因版本不同会有所差异，请以文件内实际内容为准
-:::
+>设置内容可能因版本不同会有所差异，请以文件内实际内容为准
 
-## instancePassword
+## webSocket<sup>[仅2.1.x]</sup>
 
-实例连接密码
+WebSocket服务器
+
+### addr
+
+ws地址
 
 - 类型：`string`
+- 默认值：`"ws://0.0.0.0:30000"`
+
+:::caution
+不建议更改上面的ip地址，除非你知道你在做什么
+:::
+
+### password
+
+ws连接密码
+
+- 类型：`string`
+
+:::tip
+建议长度超过六个字符，且大小写数字结合
+:::
 
 ## webServer
 
@@ -39,7 +57,7 @@
 监听的URL前缀
 
 - 类型：`string[]`
-- 默认值：`["http://127.0.0.1:30000"]`
+- 默认值：`["http://127.0.0.1:30001"]`
 
 :::tip
 [对外开放网页](toPublic)
@@ -68,20 +86,13 @@
 - 类型：`string`
 - 默认值：`"index.html"`
 
-## win32Console
+## output<sup>[仅2.1.x]</sup>
 
-Windows系统下控制台设置内容
+输出相关
 
-### allowWindowClosing
+### displayCallerMemberName
 
-允许关闭窗口
-
-- 类型：`boolean`
-- 默认值：`false`
-
-### allowQuickEditAndInsert
-
-允许快速编辑和插入（可能导致假死）
+输出时显示调用此方法的成员名称
 
 - 类型：`boolean`
 - 默认值：`false`
@@ -92,9 +103,3 @@ Windows系统下控制台设置内容
 
 - 类型：`boolean`
 - 默认值：`false`
-
-## *_internalVersion*
-
-内部版本号，用于区分设置文件版本
-
-- 类型：`number`

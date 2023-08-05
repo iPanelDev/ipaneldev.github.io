@@ -4,9 +4,9 @@
 
 | 名称     | 描述           | 值类型                   | 可能的值                                     |
 | -------- | -------------- | ------------------------ | -------------------------------------------- |
-| type     | 数据包的主类型 | string                   | `action` `event`   ...                       |
+| type     | 数据包的主类型 | string                   | `action` `event`                             |
 | sub_type | 数据包的子类型 | string                   | [`verify_request`](action/verifyRequest) ... |
-| data*    | 数据部分       | 取决于`type`和`sub_type` | ...                                          |
+| data*    | 数据部分       | 取决于`type`和`sub_type` |                                              |
 
 :::note
 除此之外，[这里还有一些附加成员](additionalMembers)
@@ -20,12 +20,9 @@
   - 请求数据
   - 执行服务器相关操作
 - `event`
+  - 服务器状态变更
   - 验证结果通知
   - 断开原因提示
-- `return`
-  - 返回请求的内容
-- `broadcast`
-  - 服务器状态变更/输入输出
 
 ## sub_type
 
