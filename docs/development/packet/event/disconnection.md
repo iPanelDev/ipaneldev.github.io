@@ -7,6 +7,26 @@ Host主动断开前发送，用于说明断开原因
 - Host->控制台
 - Host->实例
 
+## 示例
+
+```json
+{
+  "sender": {
+    "name": "iPanel Host",
+    "type": "host",
+    "metadata": {
+      "version": "2.1.7.26"
+    }
+  },
+  "type": "event",
+  "sub_type": "disconnection",
+  "time": 1691161413,
+  "data": {
+    "reason": "验证超时"
+  }
+}
+```
+
 ## type
 
 `event`

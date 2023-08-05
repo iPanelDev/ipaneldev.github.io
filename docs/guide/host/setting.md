@@ -23,7 +23,7 @@
 
 >设置内容可能因版本不同会有所差异，请以文件内实际内容为准
 
-## webSocket
+## webSocket<sup>[仅2.1.x]</sup>
 
 WebSocket服务器
 
@@ -86,7 +86,7 @@ ws连接密码
 - 类型：`string`
 - 默认值：`"index.html"`
 
-## output
+## output<sup>[仅2.1.x]</sup>
 
 输出相关
 

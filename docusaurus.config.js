@@ -40,7 +40,7 @@ const config = {
           editUrl: 'https://github.com/iPanelDev/docs/edit/main',
           versions: {
             current: {
-              label: '2.1.x'
+              label: '2.2.x'
             }
           }
         },

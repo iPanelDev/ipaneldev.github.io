@@ -7,6 +7,27 @@
 - Host->控制台
 - Host->实例
 
+## 示例
+
+```json
+{
+  "sender": {
+    "name": "iPanel Host",
+    "type": "host",
+    "metadata": {
+      "version": "2.1.7.26"
+    }
+  },
+  "type": "event",
+  "sub_type": "verify_result",
+  "time": 1691169643,
+  "data": {
+    "success": true,
+    "reason": null
+  }
+}
+```
+
 ## type
 
 `event`

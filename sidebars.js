@@ -12,6 +12,7 @@ const sidebars = {
         type: 'generated-index',
       },
       items: [
+        'guide/quickStart',
         {
           type: 'category',
           label: '📡 Host',
@@ -21,8 +22,7 @@ const sidebars = {
             id: 'guide/host/intro'
           },
           items: [
-            'guide/host/start',
-            'guide/host/settings',
+            'guide/host/setting',
             'guide/host/toPublic',
           ]
         },
@@ -35,7 +35,8 @@ const sidebars = {
             id: 'guide/webConsole/intro'
           },
           items: [
-            'guide/webConsole/config'
+            'guide/webConsole/config',
+            'guide/webConsole/deploy',
           ]
         },
         {
@@ -50,6 +51,7 @@ const sidebars = {
             'guide/instance/config',
             'guide/instance/Serein',
             'guide/instance/MCDReforged',
+            'guide/instance/EQ-BDS',
           ]
         }
       ]

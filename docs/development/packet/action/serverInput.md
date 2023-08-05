@@ -4,6 +4,16 @@
 
 - 控制台->Host
 
+## 示例
+
+```json
+{
+  "type": "action",
+  "sub_type": "server_input",
+  "data": ["help"]
+}
+```
+
 ## type
 
 `action`
