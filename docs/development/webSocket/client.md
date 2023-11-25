@@ -1,6 +1,6 @@
 # 客户端及权限
 
-可分为[实例](../guide/composition/instance/)和[网页控制台](../guide/composition/frontend/)两种
+可分为[实例](../../guide/composition/instance/)和[网页控制台](../../guide/composition/frontend/)两种
 
 ## 主要权限
 

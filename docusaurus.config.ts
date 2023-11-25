@@ -108,15 +108,19 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: [
-        'json',
-        'typescript',
-        'powershell',
-        'regex',
-      ],
+      additionalLanguages: ['json', 'typescript', 'powershell', 'regex'],
     },
 
-    themes: ['@docusaurus/theme-mermaid'],
+    themes: [
+      '@docusaurus/theme-mermaid',
+      [
+        require.resolve('@easyops-cn/docusaurus-search-local'),
+        {
+          hashed: true,
+          language: ['en', 'zh'],
+        },
+      ],
+    ],
   } satisfies Preset.ThemeConfig,
 };
 

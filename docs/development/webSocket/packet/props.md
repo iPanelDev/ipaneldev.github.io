@@ -2,12 +2,12 @@
 
 所有数据包均应包含以下属性
 
-| 名称    | 描述             | 值类型                     | 可能的值                                     |
-| ------- | ---------------- | -------------------------- | -------------------------------------------- |
-| type    | 数据包的主类型   | string                     | `action` `event`   ...                       |
-| subType | 数据包的子类型   | string                     | [`verify_request`](action/verifyRequest) ... |
-| data    | 数据部分         | 取决于`type`和`subType`    |                                              |
-| sender  | 发送者（仅接收） | [Sender](struct/Sender.md) |                                              |
+| 名称    | 描述             | 值类型                     | 可能的值                              |
+| ------- | ---------------- | -------------------------- | ------------------------------------- |
+| type    | 数据包的主类型   | string                     | `action` `event`   ...                |
+| subType | 数据包的子类型   | string                     | [`verify_request`](action/verify) ... |
+| data    | 数据部分         | 取决于`type`和`subType`    |                                       |
+| sender  | 发送者（仅接收） | [Sender](struct/Sender.md) |                                       |
 
 ## type
 

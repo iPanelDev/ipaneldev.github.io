@@ -1,41 +1,21 @@
-# Website
+# iPanel文档
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+这里是iPanel的文档站，你可以在<https://ipaneldev.github.io>查看这个文档
 
-### Installation
+## 安装依赖
 
-```
-$ yarn
-```
-
-### Local Development
-
-```
-$ yarn start
+```ps
+$ npm install
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+## 本地开发
 
-### Build
-
-```
-$ yarn build
+```ps
+$ npm start
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## 编译
 
-### Deployment
-
-Using SSH:
-
+```ps
+$ npm build
 ```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
