@@ -1,0 +1,41 @@
+# 组成
+
+可分为如下三个部分
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+
+```mermaid
+flowchart TB
+    subgraph iPanel Host
+    ws(["WebSocket服务器"])
+    web(["网页服务器"])
+    end
+    
+    subgraph 实例插件
+    i1["Serein"]
+    i2["MCDReforged"]
+    i3["EQ-BDS"]
+    i4["..."]
+    end
+    
+    i1 ---> ws
+    i2 ---> ws
+    i3 ---> ws
+    i4 ---> ws
+
+    subgraph 网页控制台
+    u1["用户1"]
+    u2["用户2"]
+    u3["..."]
+    website("网页")
+    end
+    
+    web ---> website
+    website --- u1
+    website --- u2
+    website --- u3
+
+    ws --->|"提供实例数据/控制实例"| website
+```
