@@ -97,7 +97,7 @@ const config: Config = {
             },
             {
               label: '讨论',
-              to: 'https://github.com/org/iPanelDev/discussions',
+              to: 'https://github.com/orgs/iPanelDev/discussions',
             },
           ],
         },
