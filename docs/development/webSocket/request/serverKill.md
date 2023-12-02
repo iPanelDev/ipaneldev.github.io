@@ -1,4 +1,6 @@
-# 服务器输入
+# 服务器强制结束
+
+请求强制停服（强制结束进程）
 
 - 网页控制台
   - [ ] 收
@@ -11,21 +13,18 @@
 ```json
 {
   "type": "action",
-  "subType": "server_input",
-  "data": ["help"]
+  "subType": "server_kill",
 }
 ```
 
 ## type
 
-`action`
+`request`
 
 ## subType
 
-`server_input`
+`server_kill`
 
 ## data
 
-string[]
-
-输入行的字符串列表
+null

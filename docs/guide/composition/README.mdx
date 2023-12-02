@@ -6,11 +6,18 @@ import DocCardList from '@theme/DocCardList';
 
 <DocCardList />
 
+## 结构
+
 ```mermaid
 flowchart TB
-    subgraph iPanel Host
-    ws(["WebSocket服务器"])
-    web(["网页服务器"])
+    subgraph 后端控制台-Http服务器
+    subgraph WebSocket
+    ws1(["实例Ws"])
+    ws2(["广播Ws"])
+    ws3(["DebugWs"])
+    end
+    web(["网页"])
+    api(["Api"])
     end
     
     subgraph 实例插件
@@ -20,22 +27,21 @@ flowchart TB
     i4["..."]
     end
     
-    i1 ---> ws
-    i2 ---> ws
-    i3 ---> ws
-    i4 ---> ws
+    i1 ---> ws1
+    i2 ---> ws1
+    i3 ---> ws1
+    i4 ---> ws1
 
-    subgraph 网页控制台
     u1["用户1"]
     u2["用户2"]
     u3["..."]
-    website("网页")
-    end
-    
-    web ---> website
+    website("前端网页控制台")
+
     website --- u1
     website --- u2
     website --- u3
 
-    ws --->|"提供实例数据/控制实例"| website
+    web --->|"提供网页"| website
+    api --->|"获取实例数据/控制实例"| website
+    ws2 --->|"广播实例事件"| website
 ```

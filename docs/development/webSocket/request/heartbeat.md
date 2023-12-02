@@ -10,7 +10,7 @@
 
 ## type
 
-`action`
+`request`
 
 ## subType
 

@@ -1,6 +1,6 @@
 # 心跳
 
-用于回复[心跳](../action/heartbeat)请求
+用于回复[心跳](../request/heartbeat)请求
 
 - 网页控制台
   - [ ] 收
@@ -18,4 +18,4 @@
 
 ## data
 
-[InstanceInfo](../struct/instanceInfo)
+[InstanceInfo](../../struct/instanceInfo)

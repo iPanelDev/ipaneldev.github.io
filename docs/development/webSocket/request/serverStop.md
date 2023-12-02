@@ -1,6 +1,6 @@
-# 服务器强制结束
+# 服务器关闭
 
-请求强制停服（强制结束进程）
+请求安全停服（使用默认关服命令）
 
 - 网页控制台
   - [ ] 收
@@ -13,17 +13,17 @@
 ```json
 {
   "type": "action",
-  "subType": "server_kill",
+  "subType": "server_stop"
 }
 ```
 
 ## type
 
-`action`
+`request`
 
 ## subType
 
-`server_kill`
+`server_stop`
 
 ## data
 

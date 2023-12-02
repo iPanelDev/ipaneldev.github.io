@@ -4,6 +4,15 @@
 
 ## 具体方法
 
-1. 在[urlPrefixes](setting#urlprefixes)添加`http://+:{你的端口}`
+1. 在[urlPrefixes](setting#urlprefixes)添加`http://+:{端口}`或`http://*:{端口}`
 2. 保存并关闭设置文件
 3. **以管理员权限运行iPanel** （操作系统安全限制）
+
+:::tip 例子
+
+如果你想要在公网的`1145`端口上开放此服务器
+
+1. 在设置的`webServer.urlPrefixes`中添加`http://+:1145`或`http://*:1145`
+2. 以管理员权限运行iPanel
+
+:::

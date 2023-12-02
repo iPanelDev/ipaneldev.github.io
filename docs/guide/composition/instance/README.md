@@ -1,7 +1,5 @@
 # 实例插件
 
-作为服务器面板/服务器管理程序<sup>[见下]</sup>的插件，向命令行控制台同步当前实例的信息，命令行控制台通过实例插件对接基本的服务器控制
-
 :::note 名词解释<sup>[后同]</sup>
 
 - **实例** - 运行并管理服务器的程序
@@ -18,12 +16,14 @@
 - 获取系统信息
 :::
 
+作为服务器面板/服务器管理程序的插件，向命令行控制台同步当前实例的信息，命令行控制台通过实例插件对接基本的服务器控制
+
 ## 一览
 
 | 适用软件                                                    | 最低适用版本 | 插件版本 |                                    语言                                    |
 | ----------------------------------------------------------- | :----------: | :------: | :------------------------------------------------------------------------: |
-| [Serein](https://serein.cc)                                 |    v1.3.5    | 2.3 | ![js](https://img.shields.io/badge/JavaScript-2022-F7DF1E?logo=JavaScript) |
-| [MCDReforged](https://github.com/Fallen-Breath/MCDReforged) |     2.x      | 2.1.7.29 |       ![py](https://img.shields.io/badge/Python-3-blue?logo=Python)        |
+| [Serein](https://serein.cc)                                 |    v1.3.5    | 2.3.0.0  | ![js](https://img.shields.io/badge/JavaScript-2022-F7DF1E?logo=JavaScript) |
+| [MCDReforged](https://github.com/Fallen-Breath/MCDReforged) |     2.x      | 2.3.0.0  |       ![py](https://img.shields.io/badge/Python-3-blue?logo=Python)        |
 | [EQ-BDS](https://www.minebbs.com/threads/eq-bds-3-9.12782/) |     3.9      |   2.1    |                                   易语言                                   |
 
 适用于更多面板/服务器管理程序的插件正在开发中...

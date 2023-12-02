@@ -1,17 +1,19 @@
 # Serein
 
+[![Static Badge](https://img.shields.io/badge/iPanel--Serein-+?style=for-the-badge&logo=github&label=GitHub&labelColor=495867&color=495867)](https://github.com/iPanelDev/iPanel-Serein)
+
 ![iPanel-Serein.js](Serein.png)
 
 ## 要求
 
 - [Serein](https://serein.cc)
 - 前置插件
-  - [文件读写模块](https://market.serein.cc/resources/stdio)
+  - [**文件读写模块**](https://market.serein.cc/resources/stdio)
 
 :::note
 使用前，请务必确保Serein版本为 >= v1.3.5
 
-查看方法：
+### 查看方法
 
 - 控制台
   - 在控制台输入`v`或`version`查询

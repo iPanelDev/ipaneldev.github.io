@@ -1,0 +1,115 @@
+# Api
+
+:::note
+
+- 此Api仅适用于前端网页控制台
+- 实例插件请使用[WebSocket](../webSocket/)
+
+:::
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+
+## 风格
+
+[RESTFUL](https://restfulapi.cn/)
+
+:::note
+可能不够完善
+:::
+
+## 基路径
+
+`/api`
+
+:::tip
+如果你在`http://127.0.0.1:30000`访问你的网页控制台，那么基路径即为`http://127.0.0.1:30000/api`
+
+```js
+const axiosInstance = axios.create({ baseURL: "/api" });
+await axiosInstance.get(/** ... */);
+```
+
+:::
+
+## 请求
+
+### Cookie
+
+若已登录则需要携带`__session`，用于区分用户和权限
+
+```http
+GET /api/user HTTP/1.1
+Accept: application/json, text/plain, */*
+Cache-Control: no-cache
+Connection: keep-alive
+// highlight-next-line
+Cookie: __session=JO5Rb9walE6T3iKSOikRGA
+Host: 127.0.0.1:30000
+Pragma: no-cache
+Referer: http://127.0.0.1:30000/
+```
+
+### Body
+
+- 仅针对`POST`、`PUT`和`DELETE`
+
+严格JSON文本，不包含注释、行尾逗号，但是无需转义非ASCii字符
+
+```http
+PUT /api/users/example HTTP/1.1
+Accept: application/json, text/plain, */*
+Cache-Control: no-cache
+Connection: keep-alive
+Content-Length: 97
+// highlight-next-line
+Content-Type: application/json
+Cookie: __session=JO5Rb9walE6T3iKSOikRGA
+Host: 127.0.0.1:30000
+Origin: http://127.0.0.1:30000
+Pragma: no-cache
+Referer: http://127.0.0.1:30000/
+
+{"lastLoginTime":null,"level":0,"instances":[],"description":"","ipAddresses":[],"password":null}
+```
+
+### 请求头
+
+`Content-Type`: `application/json`
+
+## 返回
+
+JSON对象文本
+
+```http
+HTTP/1.1 200 OK
+Expires: Sat, 26 Jul 1997 05:00:00 GMT
+Last-Modified: Tue, 28 Nov 2023 05:00:55 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Type: application/json; charset=utf-8
+Server: EmbedIO/3.5.2
+Date: Tue, 28 Nov 2023 05:00:55 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+Keep-Alive: timeout=15,max=96
+
+{
+    "code": 200,
+    "errorMsg": null,
+    "data": "Hello world. :)",
+    "time": "2023-12-02T17:00:50.5866649+08:00"
+}
+```
+
+### 数据包
+
+| 属性名称 | 描述                                                                   | 值类型  |
+| -------- | ---------------------------------------------------------------------- | ------- |
+| code     | [HTTP状态码](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status) | number  |
+| errorMsg | 错误信息（`code`是2xx时为空）                                          | string? |
+| data     | 数据主体                                                               | any     |
+| time     | 返回时间（ISO8861）                                                    | string  |

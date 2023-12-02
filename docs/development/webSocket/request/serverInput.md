@@ -1,6 +1,4 @@
-# 服务器关闭
-
-请求安全停服（使用默认关服命令）
+# 服务器输入
 
 - 网页控制台
   - [ ] 收
@@ -13,18 +11,21 @@
 ```json
 {
   "type": "action",
-  "subType": "server_stop"
+  "subType": "server_input",
+  "data": ["help"]
 }
 ```
 
 ## type
 
-`action`
+`request`
 
 ## subType
 
-`server_stop`
+`server_input`
 
 ## data
 
-null
+string[]
+
+输入行的字符串列表

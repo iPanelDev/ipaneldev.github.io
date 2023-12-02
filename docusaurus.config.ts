@@ -53,9 +53,10 @@ const config: Config = {
   themeConfig: {
     announcementBar: {
       content:
-        '别忘了给<a href="https://github.com/iPanelDev" style="color: var(--ifm-link-color); text-decoration: var(--ifm-link-decoration);">给个follow喵</a> :D',
+        '别忘了给<a href="https://github.com/iPanelDev" style="color: var(--ifm-link-color); text-decoration: var(--ifm-link-decoration);" id="underline-link">给个follow</a>喵 :D',
       textColor: 'var(--ifm-color-primary-contrast-foreground)',
       backgroundColor: 'var(--ifm-background-surface-color)',
+      id: '2023.12.2',
     },
 
     navbar: {
@@ -99,6 +100,10 @@ const config: Config = {
               label: '讨论',
               to: 'https://github.com/orgs/iPanelDev/discussions',
             },
+            {
+              label: '公告',
+              to: 'https://github.com/orgs/iPanelDev/discussions/categories/%E5%85%AC%E5%91%8A',
+            },
           ],
         },
       ],
@@ -108,20 +113,26 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ['json', 'typescript', 'powershell', 'regex'],
-    },
-
-    themes: [
-      '@docusaurus/theme-mermaid',
-      [
-        require.resolve('@easyops-cn/docusaurus-search-local'),
-        {
-          hashed: true,
-          language: ['en', 'zh'],
-        },
+      additionalLanguages: [
+        'json',
+        'typescript',
+        'powershell',
+        'regex',
+        'http',
       ],
-    ],
+    },
   } satisfies Preset.ThemeConfig,
+
+  themes: [
+    '@docusaurus/theme-mermaid',
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['en', 'zh'],
+      },
+    ],
+  ],
 };
 
 export default config;

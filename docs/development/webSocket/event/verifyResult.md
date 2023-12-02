@@ -1,6 +1,6 @@
 # 验证结果
 
-当Host接收到[验证回复](../action/verify)时发送
+当Host接收到[验证回复](../request/verify)时发送
 
 - 网页控制台
   - [ ] 收
