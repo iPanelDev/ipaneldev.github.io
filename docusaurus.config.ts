@@ -119,6 +119,7 @@ const config: Config = {
         'powershell',
         'regex',
         'http',
+        'bash',
       ],
     },
   } satisfies Preset.ThemeConfig,

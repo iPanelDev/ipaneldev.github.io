@@ -28,13 +28,21 @@ Microsoft.NETCore.App 6.0.25 [C:\****\dotnet\shared\Microsoft.NETCore.App]
 
 ## 3. 运行iPanel
 
-解压后双击iPanel.exe即可
+### Windows
 
-对于非Windows用户，你需要打开系统终端输入以下内容
+解压后双击`iPanel.exe`即可
 
-```powershell
+### Linux / MacOS
+
+```sh
 cd ./path/to/ipanel
-dotnet run "./iPanel.dll"
+# 当前目录下应该有`iPanel`和`iPanel.pdb`两个文件
+
+chmod +x ./iPanel
+# 允许执行此文件
+
+./iPanel
+# 运行
 ```
 
 首次运行时会释放[静态网页](composition/frontend)和[设置](composition/backend/setting)文件，你需要修改后重新启动
