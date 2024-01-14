@@ -24,7 +24,7 @@
 | ----------------------------------------------------------- | :----------: | :------: | :------------------------------------------------------------------------: |
 | [Serein](https://serein.cc)                                 |    v1.3.5    | 2.3.0.0  | ![js](https://img.shields.io/badge/JavaScript-2022-F7DF1E?logo=JavaScript) |
 | [MCDReforged](https://github.com/Fallen-Breath/MCDReforged) |     2.x      | 2.3.0.0  |       ![py](https://img.shields.io/badge/Python-3-blue?logo=Python)        |
-| [EQ-BDS](https://www.minebbs.com/threads/eq-bds-3-9.12782/) |     3.9      |   2.1    |                                   易语言                                   |
+| [EQ-BDS](https://www.minebbs.com/resources/eq-bds-3-9.4289/) |     3.9      |   2.1    |                                   易语言                                   |
 
 适用于更多面板/服务器管理程序的插件正在开发中...
 
@@ -49,6 +49,8 @@
 - [可选] 能够有丰富的第三方库和扩展空间
 
 </details>
+
+点击[这里](../../../development/quickStart)查看实例插件的快速上手指南
 
 ### 提交PR
 
