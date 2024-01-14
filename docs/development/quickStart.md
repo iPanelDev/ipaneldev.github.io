@@ -4,19 +4,19 @@
 
 如标题所说，使用您的编程语言实现一个WebSocket客户端，需要具有以下基本能力：
 
-- 1.能够连接WebSocket服务器
+* 能够连接WebSocket服务器
 
   一般的，使用您编程语言的HttpClient库，在握手完成后发送``GET /ws/instance``请求，该请求中需要包含http升级到WebSocket的协议头
 
-- 2.断线自动重连
+* 断线自动重连
 
-- 3.能接收WebSocket包体
+* 能接收WebSocket包体
 
   一般的，在OnWSMessageBody事件把数据压入缓冲区，在OnWSMessageComplete事件把缓冲区内数据取出，这些数据就是完整的WebSocket包体。也有可能您的库已经封装好了一切，直接有一个事件接收数据包。
 
   具体的做法取决于您使用的库和编程语言
 
-- 4.能发送WebSocket包体
+* 能发送WebSocket包体
 
 ## 2.了解数据包的结构
 
