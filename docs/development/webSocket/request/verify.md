@@ -17,7 +17,7 @@
         "time": "...",
         "instanceId": "...",
         "customName": "...",
-        "metadata": { ... }
+        "metadata": { /* ... */  }
     }
 }
 ```

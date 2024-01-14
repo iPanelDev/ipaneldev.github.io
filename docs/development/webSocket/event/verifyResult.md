@@ -10,7 +10,7 @@
 
 ## 示例
 
-```json
+```json title="成功"
 {
     "type": "event",
     "subType": "verify_result",
@@ -19,11 +19,11 @@
         "code": null,
         "reason": null
     },
-    "sender": { ... }
+    "sender": { /* ... */ }
 }
 ```
 
-```json
+```json title="失败"
 {
     "type": "event",
     "subType": "verify_result",
@@ -32,7 +32,7 @@
         "code": null,
         "reason": "验证超时"
     },
-    "sender": { ... }
+    "sender": { /* ... */ }
 }
 ```
 

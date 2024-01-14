@@ -8,7 +8,7 @@
 
 密码:h3ik
 
-下载``适用于Windows的iPanel_2.3.1.7z``
+下载`适用于Windows的iPanel_2.3.1.7z`
 
 ## 2.修改iPanel配置
 
@@ -22,7 +22,7 @@
 
 ![图片](eq-2.png)
 
-然后启动``iPanel.exe``
+然后启动`iPanel.exe`
 
 ## 3.面板上开启自动启动iPanel插件
 
@@ -30,11 +30,11 @@
 
 ![图片](eq-3.png)
 
-然后我们是第一次使用，需要手动去打开面板目录下的``iPanel插件.exe``，后面这个插件会随面板启动
+然后我们是第一次使用，需要手动去打开面板目录下的`iPanel插件.exe`，后面这个插件会随面板启动
 
 ## 4.配置iPanel插件
 
-修改好密码，也就是粘贴之前我们在``setting.json``里面乱打的那一串`instancePassword`
+修改好密码，也就是粘贴之前我们在`setting.json`里面乱打的那一串`instancePassword`
 
 ![图片](eq-4.png)
 
@@ -44,7 +44,7 @@
 
 ![图片](eq-5.png)
 
-输入``user create``，然后按下回车
+输入`user create`，然后按下回车
 
 ![图片](eq-6.png)
 

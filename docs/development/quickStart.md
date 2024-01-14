@@ -1,6 +1,6 @@
 # 快速上手开发实例插件
 
-## 1.使用您的编程语言实现一个WebSocket客户端
+## 1. 使用您的编程语言实现一个WebSocket客户端
 
 如标题所说，使用您的编程语言实现一个WebSocket客户端，需要具有以下基本能力：
 
@@ -18,15 +18,15 @@
 
 * 能发送WebSocket包体
 
-## 2.了解数据包的结构
+## 2. 了解数据包的结构
 
 WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./webSocket/packet)的大体结构如下：
 
 ```json
 {
-	"type": "xxx",
-	"subType": "xxx",
-	"data": {..................}
+    "type": "xxx",
+    "subType": "xxx",
+    "data": { /* ... */ }
 }
 ```
 
@@ -36,11 +36,11 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 
 ``data``则是具体的数据，数据格式取决于type和subType
 
-## 3.连接WebSocket服务器并且完成鉴权
+## 3. 连接WebSocket服务器并且完成鉴权
 
 连接WebSocket服务器只需要正常连接并且在``/ws/instance``完成协议升级即可
 
-然后我们需要鉴权，如果10秒内未完成鉴权就会被强制断开连接，断开连接前会收到[verify_result](./webSocket/event/verifyResult)消息
+然后我们需要鉴权，如果10秒内未完成鉴权就会被强制断开连接，断开连接前会收到[`verify_result`](./webSocket/event/verifyResult)消息
 
 所以说我们要立刻发送如下格式json完成鉴权：
 
@@ -62,45 +62,37 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 }
 ```
 
-- data.instanceId
-
+* data.instanceId  
   填写实例的ID，由实例插件负责生成一个由32个小写字母和数字混合而成的随机文本，并且在第一次生成后需要长期保存下来
-
-- data.customName
-
+* data.customName  
   填写实例的用户名称，这个名称会显示在网页端的实例列表上，比如说填写：``EQ-BDS面板_生存1服``。
-
-- data.time
-
+* data.time  
   ISO 8601日期格式的字符串，协调世界时，生成方法参考下面的js代码
 
   ```js
   const time = new Date().toISOString();
   ```
 
-- data.metadata
-
+* data.metadata
   实例本身的版本信息等，会显示在仪表盘的实例栏目下，参考样例填写即可
+* data.md5
+  用于鉴权的token，格式是`md5(data.time + '.' + iPanel密码)`
 
-- data.md5
+:::info
 
-  用于鉴权的token，格式是``md5(data.time + '.' + iPanel密码)``
+iPanel的密码就是iPanel目录下setting.json里面的`instancePassword`项，本例是`seNMchega`
 
-  :::info
+:::
 
-  iPanel的密码就是iPanel目录下setting.json里面的instancePassword项，本例是``seNMchega``
+取md5后的结果以全部小写字母的16进制文本形式输出，得到的就是data.md5的值
 
-  :::
+在本例中，对``2024-01-14T04:00:40.053Z.seNMchega``取md5的结果就是本例的data.md5值
 
-  取md5后的结果以全部小写字母的16进制文本形式输出，得到的就是data.md5的值
+## 3. 实现request类型下所有subType的处理
 
-  在本例中，对``2024-01-14T04:00:40.053Z.seNMchega``取md5的结果就是本例的data.md5值
+### `heartbeat`
 
-## 3.实现request类型下所有subType的处理
-
-- ### heartbeat
-
-心跳包，没有附带数据
+[心跳包](webSocket/request/heartbeat)，没有附带数据
 
 ```json
 {
@@ -121,7 +113,7 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 }
 ```
 
-接收到后需要回包反应情况，回包格式如下：
+接收到后需要回包[反应情况](webSocket/return/heartbeat)，回包格式如下：
 
 ```json
 {
@@ -148,42 +140,15 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 }
 ```
 
-或
-
-```json
-{
-    "type": "return",
-    "subType": "heartbeat",
-    "data": {
-        "system": {
-            "os": "Microsoft Windows 11 专业版 SP0.0",
-            "cpuName": "12th Gen Intel(R) Core(TM) i7-12700",
-            "totalRam": 33289648,
-            "freeRam": 22701812,
-            "cpuUsage": 0.7887241840362549
-        },
-        "server": {
-            "filename": null,
-            "status": false,
-            "runTime": null,
-            "usage": 0,
-            "capacity": 0,
-            "onlinePlayers": 0,
-            "version": null
-        }
-    }
-}
-```
-
-:::info
+:::note
 
 ``data.system.cpuUsage``和``data.server.usage``为百分比，允许浮点数，``0.51``指的是``0.51%``
 
 :::
 
-- ### server_start
+### `server_start`
 
-网页端请求开服
+[网页端请求开服](webSocket/request/serverStart)
 
 ```json
 {
@@ -202,9 +167,9 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 
 不需要回包，执行开服操作即可
 
-- ### server_stop
+### server_stop
 
-网页端请求安全停服
+[网页端请求安全停服](webSocket/request/serverStop)
 
 ```json
 {
@@ -223,9 +188,9 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 
 不需要回包，执行安全停服的操作即可(输入``stop``之类的)
 
-- ### server_kill
+### `server_kill`
 
-网页端请求强制停服
+[网页端请求强制停服](webSocket/request/serverKill)
 
 ```json
 {
@@ -244,9 +209,9 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 
 不需要回包，对服务器执行结束进程的操作即可
 
-- ### server_input
+### `server_input`
 
-来自网页端的输入
+[来自网页端的输入](webSocket/request/serverInput)
 
 ```json
 {
@@ -269,7 +234,7 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 
 ## 4.实现event类型下所有subType的处理
 
-- ### verify_result
+### `verify_result`
 
 返回验证结果，验证成功的示例如下：
 
@@ -323,7 +288,7 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 
 ## 5.需要对接的事件
 
-- ### 服务器被开启
+### 服务器被开启
 
 当服务器被开启时，须发送下面的包：
 
@@ -334,9 +299,9 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 }
 ```
 
-- ### 服务器关闭
+### 服务器关闭
 
-当服务器关闭时(不论是手动关闭还是自行崩溃)，须发送下面的包：
+当服务器关闭时（不论是手动关闭还是自行崩溃），须发送下面的包：
 
 ```json
 {
@@ -346,11 +311,11 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 }
 ```
 
-- data
+:::note
+`data`为进程退出代码
+:::
 
-  进程退出代码
-
-- ### 输入指令到服务器
+### 输入指令到服务器
 
 输入了指令到服务器，须发送下面的包：
 
@@ -364,12 +329,12 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 }
 ```
 
-- data
+:::note
 
-  输入的指令内容，是一个数组，一行一个成员，按顺序放入
+`data`为输入的指令内容、数组，一行一个，按顺序放入
+:::
 
-
-- ### 服务器输出内容
+* ### 服务器输出内容
 
 服务器输出了内容，须发送下面的包：
 
@@ -384,6 +349,8 @@ WebSocket服务器发送的数据都是UTF8编码的json文本，[数据包](./w
 }
 ```
 
-- data
+:::note
 
-  输出的内容，是一个数组，一行一个成员，按顺序放入。建议缓存一段时间再发，减小性能开销
+`data`是输出的内容，是一个数组，一行一个成员，按顺序放入。推荐缓存一段时间再发，减小性能开销
+
+:::
