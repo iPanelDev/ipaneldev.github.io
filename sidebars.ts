@@ -90,6 +90,7 @@ const sidebars: SidebarsConfig = {
         id: 'development/README',
       },
       items: [
+        'development/quickStart',
         {
           type: 'category',
           label: '数据结构',
@@ -206,7 +207,7 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
-        },
+        }
       ],
     },
   ],
