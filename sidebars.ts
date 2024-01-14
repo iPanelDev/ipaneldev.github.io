@@ -207,6 +207,7 @@ const sidebars: SidebarsConfig = {
             },
           ],
         },
+        'development/quickStart'
       ],
     },
   ],
