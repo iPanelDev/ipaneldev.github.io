@@ -10,13 +10,15 @@
 
 ```json
 {
-  "type": "action",
-  "subType": "verify",
-  "data": {
-    "md5": "...",
-    "time": "...",
-    "customName": "..."
-  }
+    "type": "request",
+    "subType": "verify",
+    "data": {
+        "md5": "...",
+        "time": "...",
+        "instanceId": "...",
+        "customName": "...",
+        "metadata": { ... }
+    }
 }
 ```
 
@@ -34,7 +36,8 @@
 | ---------- | ---------------- | ------------------------------ |
 | md5        | 见下             | string                         |
 | time       | 见下             | string                         |
-| customName | 实例的自定义名称 | string?                        |
+| instanceId | 实例Id           | string (`^[a-zA-Z0-9]{32}$`)   |
+| customName | 实例的自定义名称  | string?                        |
 | metadata   | 实例的元数据     | [Metadata](../../struct/metadata) |
 
 ### md5计算方法
